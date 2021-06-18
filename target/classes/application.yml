@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: proximity-test
+
+  datasource:
+    url: jdbc:mysql://proximity-db:3306/proximity-db?autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    database-platform:  org.hibernate.dialect.MySQL5InnoDBDialect
+
+    hibernate:
+      ddl-auto: update
+
+
+jwt:
+  token-validity: 600
+  secret: secret
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+---
+

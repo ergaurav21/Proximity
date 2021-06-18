@@ -1,0 +1,749 @@
+{
+	"info": {
+		"_postman_id": "0964a453-7f4e-426d-bf21-bf1d3b0046d3",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "create Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzcwODE3NSwiaWF0IjoxNjIzNzA3NTc1fQ._8JIEAVE5I_F4mbFIRVUglv41ehuOBwCrC9ymS0ywuOnSczJhJ2IjIotTFNaFYDjySudcyxUTqFfTNX-_DhWIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"courseName\" : \"GCP\",\n    \"description\": \"Google cloud certification course.\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/courses",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzcwODE3NSwiaWF0IjoxNjIzNzA3NTc1fQ._8JIEAVE5I_F4mbFIRVUglv41ehuOBwCrC9ymS0ywuOnSczJhJ2IjIotTFNaFYDjySudcyxUTqFfTNX-_DhWIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"courseName\" : \"GCP\",\n    \"description\": \"Google cloud certification course.\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/courses/{}",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"courses",
+								"{}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzcwODE3NSwiaWF0IjoxNjIzNzA3NTc1fQ._8JIEAVE5I_F4mbFIRVUglv41ehuOBwCrC9ymS0ywuOnSczJhJ2IjIotTFNaFYDjySudcyxUTqFfTNX-_DhWIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"courseName\" : \"GCP\",\n    \"description\": \"Google cloud certification course.\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/courses/{}",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"courses",
+								"{}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzkyODA1MCwiaWF0IjoxNjIzOTI3NDUwfQ.i-UDz-yR1yFRK33X8FiaiWnndfjS7be0loU3-HMreKxbLeRAmqkHm29Vrvtu3GXY-a_0GvNvei-n91e9vgbmYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzkyODA1MCwiaWF0IjoxNjIzOTI3NDUwfQ.i-UDz-yR1yFRK33X8FiaiWnndfjS7be0loU3-HMreKxbLeRAmqkHm29Vrvtu3GXY-a_0GvNvei-n91e9vgbmYQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"courseName\" : \"GCP\",\n    \"description\": \"Google cloud certification course.\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "34.93.122.195/courses",
+							"host": [
+								"34",
+								"93",
+								"122",
+								"195"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subject",
+			"item": [
+				{
+					"name": "create Subject",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYW5zaTEyMzQiLCJleHAiOjE2MjM2OTQ2MjEsImlhdCI6MTYyMzY5NDAyMX0.Rrv_Y8uNrg5AOgP2gDx9HdssT84-mhRn7gmt4oFI3JJw9JupYVY9zHNm5D5SDpUSPToXk7FbEgdHcrErOOlMMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/subjects",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"subjects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a subject",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYW5zaTEyMzQiLCJleHAiOjE2MjM2OTQ2MjEsImlhdCI6MTYyMzY5NDAyMX0.Rrv_Y8uNrg5AOgP2gDx9HdssT84-mhRn7gmt4oFI3JJw9JupYVY9zHNm5D5SDpUSPToXk7FbEgdHcrErOOlMMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/subjects/{}",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"subjects",
+								"{}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a subject",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYW5zaTEyMzQiLCJleHAiOjE2MjM2OTQ2MjEsImlhdCI6MTYyMzY5NDAyMX0.Rrv_Y8uNrg5AOgP2gDx9HdssT84-mhRn7gmt4oFI3JJw9JupYVY9zHNm5D5SDpUSPToXk7FbEgdHcrErOOlMMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/subjects/{}",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"subjects",
+								"{}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get subjects",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnYXVyYXZpbnN0IiwiZXhwIjoxNjIzODQwNTU3LCJpYXQiOjE2MjM4Mzk5NTd9.qgwjaJdDfaUIkR7Hx8JuMRYeNoToE9V9U4NnGdL-kyaK4BD8P5ef3UZdOB9Vg3x_0ytgwVRlEsrQVlahseBeOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/subjects",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"subjects"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lesson",
+			"item": [
+				{
+					"name": "Create a lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzcwNTY3NywiaWF0IjoxNjIzNzA1MDc3fQ.1ec3IlSVPfkbArMKbdFg-Perrl1GmMT8SMqb-AJHmFAL6SH98leEV6vkZGTa76XjBOuu4H0i6SNmV8EwzkfqOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n     \"password\" : \"1234\",\n     \"user_name\": \"gg\",\n     \"instructor\": true,\n     \"first_name\":\"gaurav\",\n     \"last_name\": \"gupta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/lessons",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"lessons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzcwNTY3NywiaWF0IjoxNjIzNzA1MDc3fQ.1ec3IlSVPfkbArMKbdFg-Perrl1GmMT8SMqb-AJHmFAL6SH98leEV6vkZGTa76XjBOuu4H0i6SNmV8EwzkfqOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n     \"password\" : \"1234\",\n     \"user_name\": \"gg\",\n     \"instructor\": true,\n     \"first_name\":\"gaurav\",\n     \"last_name\": \"gupta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/lessons",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"lessons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a lesson",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzcwNTY3NywiaWF0IjoxNjIzNzA1MDc3fQ.1ec3IlSVPfkbArMKbdFg-Perrl1GmMT8SMqb-AJHmFAL6SH98leEV6vkZGTa76XjBOuu4H0i6SNmV8EwzkfqOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n     \"password\" : \"1234\",\n     \"user_name\": \"gg\",\n     \"instructor\": true,\n     \"first_name\":\"gaurav\",\n     \"last_name\": \"gupta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/lessons/{}",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"lessons",
+								"{}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get lessons",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnZyIsImV4cCI6MTYyMzcwNTY3NywiaWF0IjoxNjIzNzA1MDc3fQ.1ec3IlSVPfkbArMKbdFg-Perrl1GmMT8SMqb-AJHmFAL6SH98leEV6vkZGTa76XjBOuu4H0i6SNmV8EwzkfqOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n     \"password\" : \"1234\",\n     \"user_name\": \"gg\",\n     \"instructor\": true,\n     \"first_name\":\"gaurav\",\n     \"last_name\": \"gupta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/lessons",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"lessons"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "create a video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/vidoes",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"vidoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a video",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/vidoes",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"vidoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a video",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/vidoes",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"vidoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/vidoes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"vidoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update video lesson or tags",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/vidoes",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"vidoes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tags",
+			"item": [
+				{
+					"name": "creat a tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/tags",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a tag",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/tags/{}",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tags",
+								"{}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a tag",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/tags/{}",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"tags",
+								"{}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get tags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnYXVyYXZpbnN0IiwiZXhwIjoxNjIzODQxMjY3LCJpYXQiOjE2MjM4NDA2Njd9.vSkKINs02F5KACSFF5eR50jPefq0tK5HZ7xTjynbGsgyDam33q1UHx10dZj436DHxorgd0vU0riss_l5ey7Qng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/tags",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"gg\",\n    \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"gauravinst\",\n    \"password\": \"1234\",\n    \"firstname\": \"gaurav\",\n    \"lastname\": \"gupta\",\n    \"email\": \"gaurav1@grr.la\",\n    \"instructor\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "34.93.122.195"
+		}
+	]
+}

@@ -1,0 +1,9 @@
+com/proximity/technicaltest/controller/SubjectControllerTest.class
+com/proximity/technicaltest/service/SubjectServiceTest.class
+com/proximity/technicaltest/service/VideoServiceTest.class
+com/proximity/technicaltest/service/CourseServiceTest.class
+com/proximity/technicaltest/TestHelper.class
+com/proximity/technicaltest/controller/VideoControllerTest.class
+com/proximity/technicaltest/service/LessonServiceTest.class
+com/proximity/technicaltest/controller/TagsControllerTest.class
+com/proximity/technicaltest/service/TagServiceTest.class
