@@ -35,80 +35,78 @@ public class VideoServiceTest {
 
   @Test
   public void givenDuplicateVideo_whenCreate_thenThrowIllegalArgumentException() {
-      //Given
-      VideoRequest videoRequest = new VideoRequest();
-      videoRequest.setTitle("test");
-      Video video = new Video();
+    // Given
+    final VideoRequest videoRequest = new VideoRequest();
+    videoRequest.setTitle("test");
+    final Video video = new Video();
 
-      when(videoRepository.findAllActiveByTitle(any())).thenReturn(video);
+    when(videoRepository.findAllActiveByTitle(any())).thenReturn(video);
 
-      // When
-      assertThatThrownBy(() -> videoService.create(videoRequest))
-      // Then
-      .isInstanceOf(IllegalArgumentException.class)
-      .hasMessage("Duplicate video code");
+    // When
+    assertThatThrownBy(() -> videoService.create(videoRequest))
+        // Then
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessage("Duplicate video code");
   }
 
-    @Test
-    public void givenMissingLessons_whenCreate_thenThrowIllegalArgumentException() {
-        //Given
-        VideoRequest videoRequest = new VideoRequest();
-        videoRequest.setTitle("test");
+  @Test
+  public void givenMissingLessons_whenCreate_thenThrowIllegalArgumentException() {
+    // Given
+    final VideoRequest videoRequest = new VideoRequest();
+    videoRequest.setTitle("test");
 
-        // When
-        assertThatThrownBy(() -> videoService.create(videoRequest))
+    // When
+    assertThatThrownBy(() -> videoService.create(videoRequest))
         // Then
         .isInstanceOf(IllegalArgumentException.class)
         .hasMessage("Video should be mapped to at-least 1 subject");
-    }
+  }
 
-    @Test
-    public void givenInvalidLessons_whenCreate_thenThrowIllegalArgumentException() {
-        //Given
-        VideoRequest videoRequest = new VideoRequest();
-        videoRequest.setTitle("test");
-        videoRequest.setLessons(Set.of("hindi"));
+  @Test
+  public void givenInvalidLessons_whenCreate_thenThrowIllegalArgumentException() {
+    // Given
+    final VideoRequest videoRequest = new VideoRequest();
+    videoRequest.setTitle("test");
+    videoRequest.setLessons(Set.of("hindi"));
 
-        when(videoRepository.findAllActiveByTitle(any())).thenReturn(null);
-        when(lessonRepository.findAllActiveByTitle("test")).thenReturn(null);
+    when(videoRepository.findAllActiveByTitle(any())).thenReturn(null);
 
-        // When
-        assertThatThrownBy(() -> videoService.create(videoRequest))
+    // When
+    assertThatThrownBy(() -> videoService.create(videoRequest))
         // Then
-       .isInstanceOf(NotFoundException.class)
-       .hasMessage("Invalid Lesson: hindi");
-    }
+        .isInstanceOf(NotFoundException.class)
+        .hasMessage("Invalid Lesson: hindi");
+  }
 
-    @Test
-    public void givenInvalidTags_whenCreate_thenThrowIllegalArgumentException() {
-        //Given
-        VideoRequest videoRequest = new VideoRequest();
-        videoRequest.setTitle("test");
-        videoRequest.setLessons(Set.of("hindi"));
-        videoRequest.setTags(Set.of("tags"));
-        Lesson lesson = new Lesson();
+  @Test
+  public void givenInvalidTags_whenCreate_thenThrowIllegalArgumentException() {
+    // Given
+    final VideoRequest videoRequest = new VideoRequest();
+    videoRequest.setTitle("test");
+    videoRequest.setLessons(Set.of("hindi"));
+    videoRequest.setTags(Set.of("tags"));
+    final Lesson lesson = new Lesson();
 
-        when(lessonRepository.findAllActiveByTitle(any())).thenReturn(lesson);
+    when(lessonRepository.findAllActiveByTitle(any())).thenReturn(lesson);
 
-        // When
-        assertThatThrownBy(() -> videoService.create(videoRequest))
+    // When
+    assertThatThrownBy(() -> videoService.create(videoRequest))
         // Then
         .isInstanceOf(NotFoundException.class)
         .hasMessage("Invalid Tag: tags");
-    }
+  }
 
-    @Test
-    public void givenValidRequest_whenCreate_thenSuccess() {
-        //Given
-        VideoRequest videoRequest = new VideoRequest();
-        videoRequest.setTitle("test");
-        videoRequest.setLessons(Set.of("hindi"));
-        Lesson lesson = new Lesson();
+  @Test
+  public void givenValidRequest_whenCreate_thenSuccess() {
+    // Given
+    final VideoRequest videoRequest = new VideoRequest();
+    videoRequest.setTitle("test");
+    videoRequest.setLessons(Set.of("hindi"));
+    final Lesson lesson = new Lesson();
 
-        when(lessonRepository.findAllActiveByTitle(any())).thenReturn(lesson);
+    when(lessonRepository.findAllActiveByTitle(any())).thenReturn(lesson);
 
-        // Then
-        videoService.create(videoRequest);
-
-    }
+    // Then
+    videoService.create(videoRequest);
+  }
 }
