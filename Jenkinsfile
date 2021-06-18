@@ -25,7 +25,7 @@ pipeline {
         	agent { label 'Slave-1' }
         	steps {  	 
             	git url: 'https://github.com/ergaurav21/Proximity.git'
-            	  sh "docker-compose build"
+            
                  sh "docker-compose up -d"
             	sh "mvn test"  
 			
