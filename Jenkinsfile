@@ -28,7 +28,7 @@ pipeline {
     	stage("Unit test") {          	 
         	agent { label 'Slave-1' }
         	steps {  	 
-            	git url: 'https://github.com/ergaurav21/Proximity.git'
+            	
             
                  sh "docker-compose up -d"
             	sh "mvn test"  
@@ -68,7 +68,7 @@ pipeline {
   
   stage ('Deploy to Docker') {
           agent {
-        label 'DockerServer'
+               label 'Slave-1' 
           }
       steps {
 	      sh "docker run -p 8080:8080 -d $registry:$BUILD_NUMBER"
