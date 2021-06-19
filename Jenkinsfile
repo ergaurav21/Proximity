@@ -3,6 +3,10 @@ pipeline {
 	tools {
     	maven 'Maven'
 	}
+	environment {
+              registry = "ergaurav21/proximity"
+              registryCredential = 'india@123'		
+	         }
 	stages {
     	stage("Checkout") {   
         	agent { label 'Slave-1' }
@@ -44,20 +48,34 @@ pipeline {
 	
     	     }
 		
-		stage("docker") {   
-			agent { label 'Slave-1' }
-        	steps {  	 
-            
-            	 sh "docker login -u ergaurav21 -p india@123"
-                 sh "docker build -t ergaurav21/proximity:proxity ."
-		 sh "docker push ergaurav21/proximity:proxity"
-            	
-			
-        	}  
-	
-    	     }
+	 stage ('Building a Docker image'){
+               steps {
+                 script {
+                  docker.build registry + ":$BUILD_NUMBER"
+                 }
+             }
+          }
 		
- 
+   stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            sh 'docker push $registry:$BUILD_NUMBER'
+          }
+        }
+      }
+    }
+  
+  stage ('Deploy to Docker') {
+          agent {
+        label 'DockerServer'
+          }
+      steps {
+	      sh "docker run -p 8080:8080 -d $registry:$BUILD_NUMBER"
+        sh "docker ps -a"
+       }           
+             
+     }
 		
 	}
 
