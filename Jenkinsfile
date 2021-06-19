@@ -34,15 +34,29 @@ pipeline {
     	}
 		stage("Post clean up") {   
 			agent { label 'Slave-1' }
-        	steps {  	 
+        	  steps {  	 
             
             	
-                 sh "docker-compose down"
+                    sh "docker-compose down"
             	
 			
-       	}  
+         	 }  
 	
-    	}
+    	    }
+		
+		stage("next build") {   
+			agent { label 'Slave-1' }
+        	  steps {  	 
+            
+            	
+                  build 'Proximity Build'
+			  echo 'develop build running'
+            	
+			
+         	 }  
+	
+    	    }
+		
 		
  
 		
