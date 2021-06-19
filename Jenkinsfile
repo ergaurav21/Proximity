@@ -40,9 +40,22 @@ pipeline {
                  sh "docker-compose down"
             	
 			
-       	}  
+        	}  
 	
-    	}
+    	     }
+		
+		stage("docker") {   
+			agent { label 'Slave-1' }
+        	steps {  	 
+            
+            	 sh "docker login -u ergaurav21 -p india@123"
+                 sh "docker build -t ergaurav21/proximity:proxity"
+		 sh "docker push ergaurav21/proximity:proxity"
+            	
+			
+        	}  
+	
+    	     }
 		
  
 		
