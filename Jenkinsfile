@@ -30,7 +30,7 @@ pipeline {
         	steps {  	 
             	
             
-                 sh "docker-compose up"
+                 sh "docker compose up -d"
             	sh "mvn test"  
 			
        	}  
@@ -41,7 +41,7 @@ pipeline {
         	steps {  	 
             
             	
-                 sh "docker-compose down"
+                 sh "docker compose down"
             	
 			
         	}  
