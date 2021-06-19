@@ -5,7 +5,7 @@ pipeline {
 	}
 	environment {
               registry = "ergaurav21/proximity"
-              registryCredential = 'india@123'		
+              registryCredential = 'docker'		
 	         }
 	stages {
     	stage("Checkout") {   
