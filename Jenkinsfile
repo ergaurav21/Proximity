@@ -69,7 +69,7 @@ pipeline {
     }
   
   stage ('Deploy to Docker') {
-	  agent { label 'Slave-1' }
+	
           agent {
                label 'Slave-1' 
           }
