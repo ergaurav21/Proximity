@@ -49,6 +49,7 @@ pipeline {
     	     }
 		
 	 stage ('Building a Docker image'){
+		 agent { label 'Slave-1' }
                steps {
                  script {
                   docker.build registry + ":$BUILD_NUMBER"
@@ -57,6 +58,7 @@ pipeline {
           }
 		
    stage('Deploy Image') {
+	   agent { label 'Slave-1' }
       steps{
         script {
           docker.withRegistry( 'https://registry-1.docker.io/v2/', registryCredential ) {
@@ -67,6 +69,7 @@ pipeline {
     }
   
   stage ('Deploy to Docker') {
+	  agent { label 'Slave-1' }
           agent {
                label 'Slave-1' 
           }
