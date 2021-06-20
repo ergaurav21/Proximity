@@ -4,7 +4,7 @@ pipeline {
     	maven 'Maven'
 	}
 	environment {
-              registry = "https://hub.docker.com/repository/docker/ergaurav21/proximity"
+              registry = "ergaurav21/proximity"
               registryCredential = 'docker'		
 	         }
 	stages {
