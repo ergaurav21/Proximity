@@ -1,6 +1,6 @@
 pipeline {
 	agent { docker {
-		image 'maven:3.8.1-jdk-11'
+		image 'maven:latest'
 	}
 	}
 	tools {
