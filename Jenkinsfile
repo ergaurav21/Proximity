@@ -2,7 +2,7 @@ pipeline {
 	agent { 
 		label 'gcp_slave'
 	}
-	}
+	
 	tools {
     	maven 'Maven'
 	}
