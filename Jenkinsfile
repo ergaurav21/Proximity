@@ -16,7 +16,10 @@ pipeline {
         	}    
     	}
     	stage('Build') {
-        	agent { label 'Slave-1' }
+		agent { docker {
+			    image 'ubuntu:latest' arg '--port 8089:80'
+		        }
+		}
         	steps {
           
         	sh "mvn clean compile"  	 
