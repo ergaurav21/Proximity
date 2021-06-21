@@ -17,7 +17,7 @@ pipeline {
     	}
     	stage('Build') {
 		agent { docker {
-			    image 'ubuntu:latest' arg '--port 8089:80'
+			    image 'ubuntu:latest'
 		        }
 		}
         	steps {
