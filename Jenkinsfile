@@ -1,5 +1,7 @@
 pipeline {
-	agent none
+	agent { docker {
+		image 'openjdk:11-jdk'
+	}
 	tools {
     	maven 'Maven'
 	}
@@ -9,17 +11,14 @@ pipeline {
 	         }
 	stages {
     	stage("Checkout") {   
-        	agent { label 'Slave-1' }
+        	
         	steps {               	 
             	git url: 'https://github.com/ergaurav21/Proximity.git'          	 
            	 
         	}    
     	}
     	stage('Build') {
-		agent { docker {
-			    image 'ubuntu'
-		        }
-		}
+		
         	steps {
           
         	sh "mvn clean compile"  	 
@@ -29,7 +28,7 @@ pipeline {
 		
    	 
     	stage("Unit test") {          	 
-        	agent { label 'Slave-1' }
+        	
         	steps {  	 
             	
             
@@ -40,7 +39,7 @@ pipeline {
 	
     	}
 		stage("Post clean up") {   
-			agent { label 'Slave-1' }
+			
         	steps {  	 
             
             	
@@ -70,9 +69,7 @@ pipeline {
     }
   
   stage ('Deploy to Docker') {
-          agent {
-               label 'Slave-1' 
-          }
+          
       steps {
 	      sh "docker run -p 8080:8080 -d $registry:$BUILD_NUMBER"
         sh "docker ps -a"
