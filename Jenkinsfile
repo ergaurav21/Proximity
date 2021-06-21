@@ -1,6 +1,6 @@
 pipeline {
-	agent { docker {
-		image 'maven:3.8.1-openjdk-8'
+	agent { 
+		label 'gcp_slave'
 	}
 	}
 	tools {
